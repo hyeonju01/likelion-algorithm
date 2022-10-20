@@ -35,4 +35,15 @@ class Stack02Test {
         assertEquals(10, st.pop());
         // st.pop() 시 arr가 비어있는 상황에서 isEmpty() 구현 필요
     }
+
+    @Test
+
+    void isEmpty() {
+        Stack02 st = new Stack02();
+        assertTrue(st.isEmpty());
+        st.push(10);
+        assertFalse(st.isEmpty());
+        st.pop();
+        assertTrue(st.isEmpty());
+    }
 }

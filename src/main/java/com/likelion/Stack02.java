@@ -1,5 +1,7 @@
 package com.likelion;
 
+import java.util.EmptyStackException;
+
 public class Stack02 {
 
     private Integer[] arr;
@@ -22,8 +24,17 @@ public class Stack02 {
     }
 
     public int pop() {
+        if (this.isEmpty()) {
+            throw new EmptyStackException();
+        }
         int value = this.arr[this.top - 1];
         this.top --;
         return value;
+    }
+
+    public boolean isEmpty() {
+        boolean isEmpty = this.top == 0;
+        return isEmpty;
+        // return this.top == 0;
     }
 }
