@@ -11,9 +11,9 @@ class BracketTest {
     @DisplayName("괄호가 잘 풀리는지")
     void bracket() {
         Bracket bracket = new Bracket();
-        assertTrue(bracket.solveBracketReplace("()()"));
-        assertTrue(bracket.solveBracketReplace("(())()"));
-        assertFalse(bracket.solveBracketReplace(")()("));
-        assertFalse(bracket.solveBracketReplace("(()("));
+//        assertTrue(bracket.solution("()()"));
+        assertTrue(bracket.solution3("(())()"));
+        assertFalse(bracket.solution3(")()("));
+//        assertFalse(bracket.solution("(()("));
     }
 }
