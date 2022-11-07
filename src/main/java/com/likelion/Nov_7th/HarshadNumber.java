@@ -6,12 +6,6 @@ import java.util.Scanner;
 
 public class HarshadNumber {
 
-
-    public static void main(String[] args) {
-        int x = 0;
-        List<Integer> arrList = new ArrayList<>();
-        Scanner sc =new Scanner(System.in);
-        x = sc.nextInt();
         /*
         10000 / 10 = 1000 (나머지 = 0)
         1000 / 10 = 100 (나머지 = 0)
@@ -20,15 +14,27 @@ public class HarshadNumber {
         1 / 10 = 0 (나머지 = 1)
         */
 
-        while (x / 10 == 0) {
-            arrList.add(x % 10);
+    public boolean solution(int x) {
+        boolean answer = true;
+        int sumOfDigit = 0;
+        while (x / 10 > 0) {
+            sumOfDigit += x % 10;
             x = x / 10;
         }
+        //System.out.println(sumOfDigit); //자릿수 합
+        if (x % sumOfDigit ==0) {
+            return answer;
+        } else answer = false;
 
-        int num = arrList.size(); //자릿수
-
-
+        return answer;
     }
 
 
+    public static void main(String[] args) {
+
+        //Scanner sc =new Scanner(System.in);
+        HarshadNumber harshadNumber = new HarshadNumber();
+        //int x = sc.nextInt();
+        System.out.println(harshadNumber.solution(1919));
+    }
 }
