@@ -9,6 +9,7 @@ public class SelectionSort {
         System.out.println(Arrays.toString(selectionSort.sortDescending(arr)));
     }
 
+    // 오름차순 정렬
     private int[] sort(int[] arr) {
         //idx 0부터 시작하여 가장 작은 값을 넣고, idx ++하여 반복한다.
         // idx = 0, arr[0] ~ arr[arr.length] 중 가장 작은 값
@@ -28,6 +29,7 @@ public class SelectionSort {
         return arr;
     }
 
+    // 내림차순 정렬
     public int[] sortDescending(int[] arr) {
         for (int i = 0; i < arr.length; i++) {
             int maxIdx = i;
