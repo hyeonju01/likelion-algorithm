@@ -6,7 +6,7 @@ public class SelectionSort {
     public static void main(String[] args) {
         SelectionSort selectionSort = new SelectionSort();
         int[] arr = {2, 7, 4, 9, 10, 223, 111, 23, 3, 39};
-        System.out.println(Arrays.toString(selectionSort.sort(arr)));
+        System.out.println(Arrays.toString(selectionSort.sortDescending(arr)));
     }
 
     private int[] sort(int[] arr) {
@@ -25,6 +25,22 @@ public class SelectionSort {
             arr[minIdx] = tmp;
         }
 
+        return arr;
+    }
+
+    public int[] sortDescending(int[] arr) {
+        for (int i = 0; i < arr.length; i++) {
+            int maxIdx = i;
+            int tmp = 0;
+            for (int j = i+1; j < arr.length; j++) {
+                if (arr[maxIdx] < arr[j]) {
+                    maxIdx = j;
+                }
+            }
+            tmp = arr[i];
+            arr[i] = arr[maxIdx];
+            arr[maxIdx] = tmp;
+        }
         return arr;
     }
 }
