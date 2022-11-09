@@ -1,26 +1,30 @@
 package com.likelion.Nov_9th;
 
+import java.util.Arrays;
+
 public class SelectionSort {
     public static void main(String[] args) {
         SelectionSort selectionSort = new SelectionSort();
         int[] arr = {2, 7, 4, 9, 10, 223, 111, 23, 3, 39};
-        selectionSort.sort(arr);
+        System.out.println(Arrays.toString(selectionSort.sort(arr)));
     }
 
-    private void sort(int[] arr) {
+    private int[] sort(int[] arr) {
         //idx 0부터 시작하여 가장 작은 값을 넣고, idx ++하여 반복한다.
         // idx = 0, arr[0] ~ arr[arr.length] 중 가장 작은 값
-        int minIdx = 0;
-        for (int i = 1; i < arr.length; i++) {
-            if (arr[minIdx] > arr[i]) {
-                minIdx = i;
-                arr[minIdx] = arr[i];
+        for (int i = 0; i < arr.length; i++) {
+            int minIdx = i;
+            int tmp = 0;
+            for (int j = i+1; j < arr.length; j++) {
+                if (arr[minIdx] > arr[j]) {
+                    minIdx = j;
+                }
             }
+            tmp = arr[i];
+            arr[i] = arr[minIdx];
+            arr[minIdx] = tmp;
         }
-        // idx = 1, arr[1] ~ arr[arr.length] 중 가장 작은 값
 
-
-
+        return arr;
     }
-
 }
