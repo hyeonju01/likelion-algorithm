@@ -11,9 +11,10 @@ public class SelectionSort {
         //idx 0부터 시작하여 가장 작은 값을 넣고, idx ++하여 반복한다.
         // idx = 0, arr[0] ~ arr[arr.length] 중 가장 작은 값
         int minIdx = 0;
-        for (int i = 0; i < arr.length; i++) {
+        for (int i = 1; i < arr.length; i++) {
             if (arr[minIdx] > arr[i]) {
                 minIdx = i;
+                arr[minIdx] = arr[i];
             }
         }
         // idx = 1, arr[1] ~ arr[arr.length] 중 가장 작은 값
