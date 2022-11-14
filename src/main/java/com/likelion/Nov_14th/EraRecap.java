@@ -1,6 +1,9 @@
 package com.likelion.Nov_14th;
 
 import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
+import java.util.stream.Stream;
 
 /*
 에라토스테네스의 체 복습
@@ -17,5 +20,25 @@ public class EraRecap {
         for (int i = 0; i < arr.length; i++) {
             arr[i] = i + 2;
         }
+
+        for (int j = 2; j * j <= 50; j++) {
+            for (int i = 0; i < arr.length; i++) {
+                if ((arr[i] % j == 0) && (arr[i] > j)) {
+                    arr[i] = 0;
+                }
+            }
+        }
+
+        System.out.println(Arrays.toString(arr));
+
+        // 소수 개수 반환
+        int PrimeCount = 0;
+        for (int i = 0; i < arr.length; i++) {
+            if (arr[i] != 0) {
+                PrimeCount ++;
+            }
+        }
+        System.out.println(PrimeCount);
+
     }
 }
