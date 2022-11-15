@@ -1,5 +1,6 @@
 package com.likelion.Nov_15th;
 
+import java.sql.SQLOutput;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -35,14 +36,9 @@ public class QuickSort1 {
             midArr[i] = mid.get(i).intValue();
         }
 
-        System.out.println(Arrays.toString(leftArr));
-        System.out.println(Arrays.toString(rightArr));
-        System.out.println(Arrays.toString(midArr));
-
-
-
-
-
-
+        System.out.println("원래 정렬은: " + arr);
+        System.out.println("pivot: " + Arrays.toString(midArr));
+        System.out.println("피봇 왼쪽 정렬은: " + Arrays.toString(leftArr));
+        System.out.println("피봇 오른쪽 정렬은: " + Arrays.toString(rightArr));
     }
 }
