@@ -36,7 +36,7 @@ public class QuickSort1 {
             midArr[i] = mid.get(i).intValue();
         }
 
-        System.out.println("원래 정렬은: " + arr);
+        System.out.println("원래 정렬은: " + Arrays.toString(arr));
         System.out.println("pivot: " + Arrays.toString(midArr));
         System.out.println("피봇 왼쪽 정렬은: " + Arrays.toString(leftArr));
         System.out.println("피봇 오른쪽 정렬은: " + Arrays.toString(rightArr));
