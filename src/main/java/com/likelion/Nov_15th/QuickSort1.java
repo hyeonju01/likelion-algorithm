@@ -19,23 +19,24 @@ public class QuickSort1 {
     }
 
     public List<Integer> sort(List<Integer> arr) {
+        if (arr.size() <= 1) {
+            return arr;
+        }
         List<Integer> left = new ArrayList<>();
         List<Integer> right = new ArrayList<>();
         List<Integer> mid = new ArrayList<>();
         int pivot = arr.get(arr.size()/2);
-        mid.add(pivot);
-        while (arr.size() > 1) {
-            for (int i = 0; i < arr.size(); i++) {
-                if ( pivot < arr.get(i)) {
-                    right.add(arr.get(i));
-                } else if (pivot >= arr.get(i)){
-                    left.add(arr.get(i));
-                } else {
-                    mid.add(arr.get(i));
-                }
+
+        for (int i = 0; i < arr.size(); i++) {
+            if ( pivot < arr.get(i)) {
+                right.add(arr.get(i));
+            } else if (pivot >= arr.get(i)){
+                left.add(arr.get(i));
+            } else {
+                mid.add(arr.get(i));
             }
         }
-        return merge(sort(left), sort(mid), sort(right));
+        return merge(sort(left), mid, sort(right));
     }
 
     public static void main(String[] args) {
