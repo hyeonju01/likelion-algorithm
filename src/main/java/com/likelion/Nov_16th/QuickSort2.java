@@ -20,8 +20,14 @@ public class QuickSort2 {
         System.out.println(idxFromL);
         System.out.println(idxFromR);
 
+        int temp = arr[idxFromL];
+        arr[idxFromL] = arr[idxFromR];
+        arr[idxFromR] = temp;
+        idxFromL += 1;
+        idxFromR -= 1;
 
-
+        System.out.printf("4: %d 7: %d%n", arr[4], arr[7]); // 25, 40
+        System.out.printf("leftIdx:%d rightIdx:%d%n", idxFromL, idxFromR); // 5, 6
 
     }
 }
