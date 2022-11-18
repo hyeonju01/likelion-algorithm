@@ -15,12 +15,16 @@ public class CaesarCipher {
     public String solution(String s, int n) { // s= "AB"
         String answer = "";
 
+        // s 길이 배열 선언
         int [] splitted = new int[s.length()];
+
+        // 배열에 s의 글자 하나씩 아스키 코드로 변환하여 넣기
         for (int i = 0; i < s.length(); i++) {
-            if (s.charAt(i)== 90) {
-                splitted[i] = 65;
-            } else if (s.charAt(i) == 122) {
-                splitted[i] = 97;
+            // 나머지가 25이면
+            if (s.charAt(i) % 65 == 25) {
+                splitted[i] = 65 + n - 1;
+            } else if (s.charAt(i) % 97 == 25) {
+                splitted[i] = 97 + n - 1;
             } else if (s.charAt(i) == 32) {
                 splitted[i] = s.charAt(i);
             }else
